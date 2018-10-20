@@ -15,5 +15,8 @@
     "api"
   ],
   "author": "Mohammed Chisti",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
