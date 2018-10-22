@@ -4,7 +4,7 @@
   "description": "An API to keep track of the prices of your daily items bought at which store, to help you save money.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon --exec babel-node index.js",
     "test": "test"
   },
   "repository": {
@@ -19,5 +19,11 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.18.4"
   }
 }

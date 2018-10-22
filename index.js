@@ -1,5 +1,5 @@
-const items = require('./routes/items')
-const express = require('express')
+import items from './routes/items'
+import express from 'express'
 const app = express()
 
 app.use(express.json())

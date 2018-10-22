@@ -1,4 +1,4 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
 
 // Temp Data
@@ -52,4 +52,4 @@ router.post("/", (req, res) => {
   res.send(item)
 })
 
-module.exports = router
+export default router
