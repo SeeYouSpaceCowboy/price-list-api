@@ -1,13 +1,18 @@
+import cors from './middleware/cors'
+import index from './routes/index'
 import items from './routes/items'
+import mongoose from 'mongoose'
 import express from 'express'
 const app = express()
 
+mongoose.connect('mongodb://localhost/price-list')
+  .then(() => console.log('Connected to MongoDB...'))
+  .catch(err => console.log('Could not connect to MongoDB...'))
+
 app.use(express.json())
-app.use('/api/items', items)
+app.use(cors)
+app.use(index)
+app.use('/api/v1/items', items)
 
-app.get('/', (req, res) => {
-  res.send([{ message: "Hello! Welcome to the Price List API!" }])
-})
-
-var port = process.env.PORT || 5000
+var port = process.env.PORT || 4001
 app.listen(port, () => console.log(`Listening on ${ port }...`))
